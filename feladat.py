@@ -10,14 +10,44 @@ def pontokOsszeg(lista: list[int]) -> int:
     for ertek in lista:
         osszeg += ertek
     return osszeg
-# teszteset
+# teszt
+
 def jatekos_vesztett_teszt():
     jatekosP: list[int] = [7, 8, 10]
     gepP: list[int] = [10, 9, 2]
 
-    print(eredmeny(jatekosP, gepP))
+    kapott: str = eredmeny(jatekosP, gepP)
+    vart: str = "Játékos veszített"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
+def gep_vesztett_teszt():
+    jatekosP: list[int] = [7, 8, 10]
+    gepP: list[int] = [10, 9, 2]
+
+    kapott: str = eredmeny(jatekosP, gepP)
+    vart: str = "Gép veszített"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
+def dontetlen():
+    jatekosP: list[int] = [8, 10]
+    gepP: list[int] = [10, 8]
+
+    kapott: str = eredmeny(jatekosP, gepP)
+    vart: str = "Döntetlen"
+    if kapott == vart:
+        print("A teszteset sikeres!")
+    else:
+        print("A teszteset sikertelen!")
+
 
 def tesztek():
     jatekos_vesztett_teszt()
-
+    gep_vesztett_teszt()
+    dontetlen()
 tesztek()
