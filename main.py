@@ -1,0 +1,2 @@
+import feladat
+feladat.eredmeny()
