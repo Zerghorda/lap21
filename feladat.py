@@ -1,3 +1,4 @@
+#megoldás
 def eredmeny(jatekosPontja: list[int], gepPontja: list[int]) -> str:
     if pontokOsszeg(jatekosPontja) > 21:
         return "Játékos vesztett"
