@@ -1,18 +1,22 @@
-# megoldas
-import random
-def eredmeny(jatekosP, gepP):
-    if jatekosP > 21:
-        print("játékos vesztett")
-    if gepP > 21:
-        print("gép vesztett")
-    # teszt
+def eredmeny(jatekosPontja: list[int], gepPontja: list[int]) -> str:
+    if pontokOsszeg(jatekosPontja) > 21:
+        return "Játékos vesztett"
+    elif pontokOsszeg(gepPontja) > 21:
+        return "Gép vesztett"
 
+def pontokOsszeg(lista: list[int]) -> int:
+    osszeg = 0
+    for ertek in lista:
+        osszeg += ertek
+    return osszeg
+# teszteset
+def jatekos_vesztett_teszt():
+    jatekosP: list[int] = [7, 8, 10]
+    gepP: list[int] = [10, 9, 2]
 
+    print(eredmeny(jatekosP, gepP))
 
-jatekosP = []
-gepP = [6, 8, 4, 5]
-jatekosP.append(random.randint(1, 30))
-gepP.append(random.randint(1, 30))
+def tesztek():
+    jatekos_vesztett_teszt()
 
-def teszt():
- pass
+tesztek()
