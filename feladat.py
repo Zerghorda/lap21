@@ -103,7 +103,7 @@ def gep_veszitet_dontetlennel():
     print("Gép veszített döntetlennél")
     vart: str = "döntetlen"
     kapott: str = eredmeny(jatekosP, gepP)
-    if vart == kapott and len(jatekosP) <len(gepP):
+    if vart == kapott and len(jatekosP) < len(gepP):
         if kapott == vart:
             print("A teszteset jó!")
         else:
