@@ -129,4 +129,5 @@ def tesztek():
     gep_veszitet_dontetlennel()
     gep_veszitet_tullepel()
     dontetlen_teszt()
+    dontettlen_teszt_mindketto_veszit()
 tesztek()
