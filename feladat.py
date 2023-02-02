@@ -1,26 +1,27 @@
 #megoldás
 def eredmeny(jatekosPontja: list[int], gepPontja: list[int]) -> str:
+    eredmenyek = ""
     jatekosL = len(jatekosPontja)
     gepL = len(gepPontja)
-    if pontokOsszeg(jatekosPontja) <= 21 and pontokOsszeg(gepPontja) <=21:
+    if pontokOsszeg(jatekosPontja) <= 21 and pontokOsszeg(gepPontja) <= 21:
         if jatekosPontja > gepPontja:
-            eredmeny = print("játékos nyert")
+            eredmenyek = "játékos nyert"
         elif gepPontja > jatekosPontja:
-             eredmeny = print("Gép nyert")
+             eredmenyek = "Gép nyert"
         elif gepPontja == jatekosPontja:
             if gepL > jatekosL:
-                eredmeny = print("játékos nyert")
+                eredmenyek = "játékos nyert"
             elif jatekosL > gepL:
-               eredmeny = print("gép nyert")
+               eredmenyek = "gép nyert"
             else:
-                eredmeny = print("döntetlen")
-    elif jatekosL > 21:
-        print("gép nyert")
-    elif gepL > 21:
-        print("Játékos nyert")
-    elif jatekosL >21 and gepL > 21:
-        eredmeny = print("mindenki vesztett")
-    return str(eredmeny)
+                eredmenyek = "döntetlen"
+    if jatekosL > 21:
+        eredmenyek = "gép nyert"
+    if gepL > 21:
+        eredmenyek = "Játékos nyert"
+    if jatekosL > 21 and gepL > 21:
+        eredmenyek = "mindenki vesztett"
+    return eredmenyek
 
 
 def pontokOsszeg(lista: list[int]) -> int:
@@ -42,8 +43,9 @@ def jatekos_vesztett_teszt():
     else:
         print("A teszteset nem jó!")
 def jatekos_veszitet_tullepel():
-    jatekosP: list[int] = [10, 12]
-    if jatekosP > 21:
+    jatekosP = [10, 12]
+    jatekosOszeg = jatekosP
+    if jatekosOszeg > 21:
         kapott: str = eredmeny(jatekosP)
         vart: str = "Játékos veszített"
         if kapott == vart:
