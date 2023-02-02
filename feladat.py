@@ -23,7 +23,6 @@ def eredmeny(jatekosPontja: list[int], gepPontja: list[int]) -> str:
     return str(eredmeny)
 
 
-
 def pontokOsszeg(lista: list[int]) -> int:
     osszeg = 0
     for ertek in lista:
