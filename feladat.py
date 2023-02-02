@@ -1,9 +1,28 @@
 #megoldás
 def eredmeny(jatekosPontja: list[int], gepPontja: list[int]) -> str:
-    if pontokOsszeg(jatekosPontja) > 21:
-        return "Játékos vesztett"
-    elif pontokOsszeg(gepPontja) > 21:
-        return "Gép vesztett"
+    jatekosL = len(jatekosPontja)
+    gepL = len(gepPontja)
+    if pontokOsszeg(jatekosPontja) <= 21 and pontokOsszeg(gepPontja) <=21:
+        if jatekosPontja > gepPontja:
+            eredmeny = print("játékos nyert")
+        elif gepPontja > jatekosPontja:
+             eredmeny = print("Gép nyert")
+        elif gepPontja == jatekosPontja:
+            if gepL > jatekosL:
+                eredmeny = print("játékos nyert")
+            elif jatekosL > gepL:
+               eredmeny = print("gép nyert")
+            else:
+                eredmeny = print("döntetlen")
+    elif jatekosL > 21:
+        print("gép nyert")
+    elif gepL > 21:
+        print("Játékos nyert")
+    elif jatekosL >21 and gepL > 21:
+        eredmeny = print("mindenki vesztett")
+    return str(eredmeny)
+
+
 
 def pontokOsszeg(lista: list[int]) -> int:
     osszeg = 0
@@ -111,7 +130,7 @@ def dontetlen_teszt():
 def dontettlen_teszt_mindketto_veszit():
     jatekosP: list[int] = [10, 12]
     gepP: list[int] = [10, 12]
-    print("Döntetlen")
+    print("Döntetlen mindkettő veszített")
     kapott: str = eredmeny(jatekosP, gepP)
     vart: str = "Döntetlen"
     if kapott == vart:
