@@ -15,6 +15,12 @@ def pontokOsszeg(lista: list[int]) -> int:
 def jatekos_vesztett_teszt():
     jatekosP: list[int] = [7, 8, 10]
     gepP: list[int] = [10, 9, 2]
+    jatekosP < gepP
+    jatekosP > 21
+    if jatekosP == gepP:
+        jatekosP[list] > gepP[list]
+
+
 
     kapott: str = eredmeny(jatekosP, gepP)
     vart: str = "Játékos veszített"
